@@ -32,7 +32,7 @@ except (FileNotFoundError, json.JSONDecodeError):
     cfg = {"$schema": "https://opencode.ai/config.json"}
 cfg.setdefault("command", {})["compose-prompt"] = {
     "description": "Compose a structured prompt for another agent, gathering context from project files, skills, and model config.",
-    "prompt": "Load the `agent-prompt-composer` skill, then follow its instructions to gather context and compose a prompt for the user's task. Ask clarifying questions if the task is ambiguous. Output the final prompt wrapped in a code block.",
+    "template": "Load the `agent-prompt-composer` skill, then follow its instructions to gather context and compose a prompt for the user's task. Ask clarifying questions if the task is ambiguous. Output the final prompt wrapped in a code block.",
 }
 with open(path, "w") as f:
     json.dump(cfg, f, indent=2)
