@@ -54,11 +54,31 @@ Every composed prompt follows this shape:
 
 ## Installation
 
-Clone or copy this skill into your project:
+### Per-project
 
 ```bash
 mkdir -p .opencode/skills
 cp -r agent-prompt-composer .opencode/skills/
 ```
 
-No additional config needed — OpenCode scans `.opencode/skills/*/SKILL.md` automatically.
+### Global (available in every session)
+
+```bash
+mkdir -p ~/.config/opencode/skills
+cp -r agent-prompt-composer ~/.config/opencode/skills/
+```
+
+The command must be registered in the global config at `~/.config/opencode/config.json`:
+
+```json
+{
+  "command": {
+    "compose-prompt": {
+      "description": "Compose a structured prompt for another agent...",
+      "prompt": "Load the `agent-prompt-composer` skill..."
+    }
+  }
+}
+```
+
+No additional config needed — OpenCode scans `skills/*/SKILL.md` automatically in both project and global paths.
