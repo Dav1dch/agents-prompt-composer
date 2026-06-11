@@ -24,6 +24,16 @@ skill({ name: "agent-prompt-composer" })
 
 Once loaded, follow the skill's instructions to compose a prompt for another agent.
 
+### Slash command
+
+If `opencode.json` is configured with the `compose-prompt` command, you can also type:
+
+```
+/compose-prompt <describe the task for the target agent>
+```
+
+This loads the skill automatically and starts the composition process.
+
 ## Prompt structure
 
 Every composed prompt follows this shape:
